@@ -1,0 +1,5 @@
+*.hirm
+*.irm
+*.o
+*.out
+*.prof
