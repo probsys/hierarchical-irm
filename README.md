@@ -1,5 +1,7 @@
 # Hierarchical Infinite Relational Model
 
+[![Actions Status](https://github.com/probcomp/hierarchical-irm/workflows/Python%20package/badge.svg)](https://github.com/probcomp/hierarchical-irm/actions)
+
 This repository contains implementations of the Hierarchical Infinite
 Relational Model (HIRM), a Bayesian method for automatic structure discovery in
 relational data. The method is described in:
