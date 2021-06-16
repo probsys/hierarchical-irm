@@ -27,7 +27,7 @@ The test suite can be invoked via
 These examples are run using the Python (slower) backend, and in several
 cases for fewer MCMC iterations (e.g., <=20) than are needed for chains
 to converge. To invoke all the examples, first clone this repository
-and run:
+and run
     
     $ ./check.sh examples
 
@@ -51,14 +51,16 @@ The test suite can be invoked via
 
 A command-line interface to the HIRM is provided under `cxx/hirm.out`.
 
-For an example of using the C++ library, refer to [`cxx/tests/test_hirm_animals.cc`](cxx/tests/test_hirm_animals.cc).
+For an example of using the C++ library, refer to
+[`cxx/tests/test_hirm_animals.cc`](cxx/tests/test_hirm_animals.cc).
 
 ## Usage: Command Line Interface
 
-First build the C++ code as described above. A synopsis
-is given by `./hirm.out --help`:
+First build the C++ code as described above and then run the binary in `cxx/hirm.out`.
+It shows the following synopsis
 
 ```
+$ ./hirm.out --help
 Run a hierarchical infinite relational model.
 Usage:
   hirm.out [OPTION...] <path>
@@ -72,7 +74,7 @@ Usage:
       --load arg     path to .[h]irm file with initial clusters (default: "")
 ```
 
-We will explain the usage by way of the following example:
+We will explain the usage by way of the following example
 
     $ cd cxx
     $ ./hirm.out assets/animals.unary
@@ -85,31 +87,33 @@ We will explain the usage by way of the following example:
     saving to assets/animals.unary.10.hirm
 
 In this example we have specified `<path>` to be `assets/animals.unary`.
-It is required for there to be two files on disk:
+It is required for there to be two input files on disk:
     1. Schema file: of the form `<path>.schema`.
     2. Observation file: of the form `<path>.obs`.
 
 The output file is `assets/animals.unary.10.hirm`.
 
-We now describe the input and output files.
+We next describe the input and output files.
 
 #### Schema file
 
 The schema file `assets/animals.unary.schema` specifies the signature of
 the relations in the system:
 
-    $ cat assets/animals.unary.schema
-    bernoulli black animal
-    bernoulli white animal
-    bernoulli blue animal
-    bernoulli brown animal
-    bernoulli gray animal
-    bernoulli orange animal
-    bernoulli red animal
-    bernoulli yellow animal
-    bernoulli patches animal
-    bernoulli spots animal
-    ...
+```
+$ cat assets/animals.unary.schema
+bernoulli black animal
+bernoulli white animal
+bernoulli blue animal
+bernoulli brown animal
+bernoulli gray animal
+bernoulli orange animal
+bernoulli red animal
+bernoulli yellow animal
+bernoulli patches animal
+bernoulli spots animal
+...
+```
 
 Each line specifies the signature of a relation in the system:
 
@@ -129,20 +133,22 @@ a single higher-order relation with signature: `bernoulli has feature animal`.
 
 #### Observation file
 
-The observation file `assets/animals.unary.obs` specifies realizations of the relations:
+The observation file `assets/animals.unary.obs` specifies realizations of the relations
 
-    $ cat assets/animals.unary.obs
-    0 black antelope
-    1 black grizzlybear
-    1 black killerwhale
-    0 black beaver
-    1 black dalmatian
-    0 black persiancat
-    1 black horse
-    1 black germanshepherd
-    0 black bluewhale
-    1 black siamesecat
-    ...
+```
+$ cat assets/animals.unary.obs
+0 black antelope
+1 black grizzlybear
+1 black killerwhale
+0 black beaver
+1 black dalmatian
+0 black persiancat
+1 black horse
+1 black germanshepherd
+0 black bluewhale
+1 black siamesecat
+...
+```
 
 Each line specifies a single observation:
 
@@ -165,6 +171,7 @@ clusterings of relations and domain entities. The output file is comprised
 of multiple sections, each delimited by a single blank line.
 
 ```
+$ cat assets/animals.unary.10.hirm
 0 oldworld black insects skimmer chewteeth agility bulbous fast lean orange inactive slow stripes tail red active
 1 quadrapedal paws strainteeth pads meatteeth hooves longneck ocean coastal hunter hairless smart group nocturnal meat buckteeth plankton plains timid horns hibernate forager ground grazer furry fields brown solitary stalker toughskin water arctic blue smelly claws swims vegetation fish flippers walks
 5 mountains jungle forest bipedal cave desert fierce nestspot tree tusks yellow hands scavenger flys
@@ -195,7 +202,9 @@ animal 3 seal
 The first section in the file specifies the clustering of the relations.
 Each line specifies a relation cluster, for example:
 
-    0 oldworld black insects skimmer chewteeth agility bulbous fast lean orange inactive slow stripes tail red active
+```
+0 oldworld black insects skimmer chewteeth agility bulbous fast lean orange inactive slow stripes tail red active
+```
 
 Here, the first entry is a unique integer code for the cluster index and the
 remaining entries are names of relations that belong to this cluster.
@@ -204,16 +213,20 @@ We see that there are four relation clusters with indexes `[0, 1, 5, 6]`.
 All the remaining sections in the file start with `irm=x`, where `x` is an
 integer code from the first section, for example:
 
-    irm=6
-    animal 0 horse killerwhale spidermonkey deer giraffe germanshepherd rhinoceros leopard moose fox wolf buffalo dolphin bluewhale grizzlybear chimpanzee walrus lion bobcat zebra beaver elephant ox antelope gorilla hippopotamus humpbackwhale polarbear tiger
-    animal 1 collie squirrel raccoon chihuahua sheep hamster rabbit rat mouse skunk persiancat weasel mole bat otter siamesecat
-    animal 2 dalmatian giantpanda cow pig
-    animal 3 seal
+```
+irm=6
+animal 0 horse killerwhale spidermonkey deer giraffe germanshepherd rhinoceros leopard moose fox wolf buffalo dolphin bluewhale grizzlybear chimpanzee walrus lion bobcat zebra beaver elephant ox antelope gorilla hippopotamus humpbackwhale polarbear tiger
+animal 1 collie squirrel raccoon chihuahua sheep hamster rabbit rat mouse skunk persiancat weasel mole bat otter siamesecat
+animal 2 dalmatian giantpanda cow pig
+animal 3 seal
+```
 
 Each subsequent line in the `irm=6` section specifies a cluster for a given
 domain, for example
 
-    animal 2 dalmatian giantpanda cow pig
+```
+animal 2 dalmatian giantpanda cow pig
+```
 
 Here, the first entry is the name of the domain, the second entry is a
 unique integer for the cluster index, and the remaining entries are names
