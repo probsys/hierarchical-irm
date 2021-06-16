@@ -1,6 +1,7 @@
 # Hierarchical Infinite Relational Model
 
 [![Actions Status](https://github.com/probcomp/hierarchical-irm/workflows/Python%20package/badge.svg)](https://github.com/probcomp/hierarchical-irm/actions)
+[![pypi](https://img.shields.io/pypi/v/hirm.svg)](https://pypi.org/project/hirm/)
 
 This repository contains implementations of the Hierarchical Infinite
 Relational Model (HIRM), a Bayesian method for automatic structure discovery in
