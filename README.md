@@ -7,7 +7,8 @@ This repository contains implementations of the Hierarchical Infinite
 Relational Model (HIRM), a Bayesian method for automatic structure discovery in
 relational data. The method is described in:
 
-Hierarchical Infinite Relational Model. Saad, F. A. and Mansinghka, V. K. UAI 2021.
+Hierarchical Infinite Relational Model. Saad, Feras A. and Mansinghka, Vikash K.
+In: Proc. 37th UAI, 2021.
 
 ## Installation (Python)
 
