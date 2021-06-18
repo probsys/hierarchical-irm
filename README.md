@@ -9,7 +9,7 @@ relational data. The method is described in:
 
 Hierarchical Infinite Relational Model. Saad, F. A. and Mansinghka, V. K. UAI 2021.
 
-## Installation (Python Library)
+## Installation (Python)
 
 This software is tested on Ubuntu 18.04+ and requires a Python 3.6+
 environment. The library can be installed from the PyPI repository using
@@ -56,8 +56,8 @@ For an example of using the C++ library, refer to
 
 ## Usage: Command Line Interface
 
-First build the C++ code as described above and then run the binary in `cxx/hirm.out`.
-It shows the following synopsis
+First build the C++ code as described above and then run the binary in
+`cxx/hirm.out`. It shows the following synopsis
 
 ```
 $ ./hirm.out --help
