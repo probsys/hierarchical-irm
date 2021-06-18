@@ -24,14 +24,14 @@ The test suite can be invoked via
 
 ## Running Python examples
 
-These examples are run using the Python (slower) backend, and in several
-cases for fewer MCMC iterations (e.g., <=20) than are needed for chains
-to converge. To invoke all the examples, first clone this repository
-and run
+The [examples/](examples) are run using the Python (slower) backend, and in
+several cases for fewer MCMC iterations (e.g., <=20) than are needed for
+chains to converge. To invoke all the examples, first clone this repository
+then run
     
     $ ./check.sh examples
 
-The outputs and plots are written to `examples/assets`.
+The outputs and plots are written to [examples/assets](examples/assets).
 To run a specific example
 
     $ cd examples
