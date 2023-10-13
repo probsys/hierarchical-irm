@@ -9,6 +9,7 @@ relational data. The method is described in:
 
 Hierarchical Infinite Relational Model. Saad, Feras A. and Mansinghka, Vikash K.
 In: Proc. 37th UAI, 2021.
+<https://proceedings.mlr.press/v161/saad21a.html>
 
 ## Installation (Python)
 
